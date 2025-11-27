@@ -1,8 +1,6 @@
-// src/features/recordings/api.ts
 import { type Recording } from "./types";
 import recordingsData from "mocks/recordings.json";
 
-// On dit explicitement à TS que recordingsData est de type Recording[]
 const recordings: Recording[] = recordingsData as Recording[];
 
 export const fetchRecordings = async (): Promise<Recording[]> => {

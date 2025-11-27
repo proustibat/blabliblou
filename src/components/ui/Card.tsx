@@ -1,4 +1,6 @@
-type CardProps = React.HTMLAttributes<HTMLDivElement> & {
+import {type HTMLAttributes} from 'react';
+
+type CardProps = HTMLAttributes<HTMLDivElement> & {
   title?: string;
 };
 

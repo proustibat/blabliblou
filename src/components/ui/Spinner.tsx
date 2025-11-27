@@ -1,4 +1,6 @@
-type SpinnerProps = {
+import type {HTMLAttributes} from "react";
+
+type SpinnerProps = HTMLAttributes<HTMLDivElement> & {
   size?: number;
   className?: string;
 };

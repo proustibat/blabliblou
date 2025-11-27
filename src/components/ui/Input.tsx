@@ -1,7 +1,6 @@
-import type React from "react";
-import { useId } from "react";
+import {type InputHTMLAttributes, useId} from "react";
 
-type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   helperText?: string;
 };

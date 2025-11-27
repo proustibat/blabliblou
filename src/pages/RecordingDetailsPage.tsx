@@ -13,7 +13,6 @@ export const RecordingDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const { data: recording, isLoading: isRecordingLoading } = useRecording(id!);
 
-  // Hook AI : enabled = false pour ne pas lancer automatiquement
   const { data: aiSummaryDetailed, isFetching: isFetchingDetailed, refetch: refetchDetailed, isLoading: isLoadingSummaryDetailed } = useAI(recording, true);
   const { data: aiSummarySimple, isFetching: isFetchingSimple, refetch: refetchSimple, isLoading: isLoadingSummarySimple } = useAI(recording, false);
 
