@@ -1,38 +1,62 @@
 [
   {
     "id": "meeting-001",
-    "title": "Launch of Dark Mode Feature",
-    "date": "2025-11-20",
-    "duration": "12 minutes",
-    "industry": "Tech / Mobile App",
-    "participants": ["Clara (Product Manager)", "Malik (Frontend Developer)", "Sophie (UX Designer)", "Hugo (QA)"],
-    "transcript": "Clara: Hi everyone, thanks for joining. Today we’re discussing the launch of the dark mode feature on our mobile app.\nMalik: Hey, on the dev side, iOS is done and Android is almost ready. There’s just a small bug with the switch animation.\nSophie: For UX, I’ve checked the dark mode designs and it looks good, but we need to adjust contrast on some buttons for accessibility.\nHugo: Got it. I can start testing on iOS once Malik fixes the bug, then Android.\nClara: Perfect. Malik, can you fix it by tomorrow?\nMalik: Yes, I can. I’ll prioritize it today.\nClara: Great. Sophie, can you update the designs and share them with QA?\nSophie: Yes, I’ll do that this morning.\nClara: Excellent. Action plan: bug fixed by Malik, QA tests by Hugo, designs shared by Sophie. We’ll meet on Friday for the final review. Thanks!"
+    "title": "Quarterly Product Strategy Alignment",
+    "date": "2025-11-18",
+    "duration": "42 minutes",
+    "industry": "SaaS / B2B Software",
+    "participants": [
+      "Clara (Head of Product)",
+      "Evan (Tech Lead)",
+      "Mia (UX Researcher)",
+      "Daniel (Data Analyst)",
+      "Rosie (Customer Success Lead)"
+    ],
+    "transcript": "Clara: Good morning, everyone. Thanks for joining this strategy alignment session. We have quite a lot to cover: Q1 priorities, customer feedback synthesis, and a discussion around the new collaboration features.\n\nRosie: Yes, uh, I brought a summary of the customer feedback sessions. I can walk through that whenever you're ready.\n\nClara: Perfect. Let’s start with a quick review of where we stand. Evan, can you give us a technical update?\n\nEvan: Sure. So… overall the architecture refactor is 70% done. The last pieces are related to real-time sync performance. We’re hitting some weird spikes when 40+ users collaborate on the same document.\n\nMia: That matches what users reported during tests — they see, like, lag bursts, especially when comments are added rapidly.\n\nEvan: Exactly. We're debugging it, but… it's not trivial.\n\nClara: Understood. Do you feel confident we can finish before the end of December?\n\nEvan: Yes, but only if we pause the low-priority UI refinements. The team is stretched.\n\nClara: Okay, noted. Rosie, can you walk us through the feedback?\n\nRosie: Sure. So, in the last three weeks, we interviewed about 26 clients. The big themes are: one, better permission management; two, clarity on document history; and three, performance — which aligns with Evan’s point.\n\nDaniel: I also ran a cluster analysis on the feedback dataset… and interestingly, enterprise clients are *far* more vocal about permission issues than SMBs.\n\nClara: That makes sense. Bigger teams, more security constraints.\n\nMia: I’d add that the mental model for permissions is currently confusing. People don’t know whether they’re editing team-level rights or document-level rights.\n\nEvan: Yeah, the codebase reflects that confusion too. (laughs)\n\nClara: Okay, so for Q1 we need to: one, prioritize permissions redesign; two, finalize the real-time sync refactor; and three, explore a new collaboration feature. Speaking of that — Mia, what did we learn from the prototype tests?\n\nMia: So… testers *loved* the idea of “presence indicators” — the avatars showing who’s active. But they were confused by the floating comment threads. They felt too intrusive when multiple people commented at once.\n\nRosie: Oh yeah, two clients mentioned that the screen felt stressful.\n\nMia: Exactly. They suggested anchoring comments more cleanly, maybe in a sidebar.\n\nEvan: That would simplify some logic on our side. Floating threads are… messy.\n\nClara: So we pivot to a sidebar comment system?\n\nEvan: I’d strongly vote yes.\n\nClara: Good. Daniel, any insights about feature adoption correlations?\n\nDaniel: Yes. There's a strong correlation between teams using comments heavily and their retention rate. If we improve this feature, it could boost stickiness.\n\nClara: Helpful. Okay, before we wrap, let’s align on Q1 roadmap:\n\n— Real-time sync refactor completed (Evan’s team).\n— Permissions system redesign (shared work across Product + UX + Eng).\n— Commenting system redesign with sidebar approach.\n— Stretch goal: presence indicators.\n\nEveryone aligned?\n\nRosie: Yes.\nMia: Yup.\nDaniel: Works for me.\nEvan: As long as UI refinements are paused — yes.\n\nClara: Good. I’ll formalize everything in the quarterly roadmap doc. Thanks, everyone!"
   },
   {
     "id": "meeting-002",
-    "title": "End-of-Year Team-Building Organization",
-    "date": "2025-11-22",
-    "duration": "15 minutes",
-    "industry": "HR / Management",
-    "participants": ["Julien (Manager)", "Laura (HR)", "Pierre (Marketing)", "Nina (Finance)"],
-    "transcript": "Julien: Hello, today we need to plan the end-of-year team-building. We need to decide on location, date, and activities.\nLaura: I suggest the week of December 15, that gives everyone enough time to organize.\nPierre: For the location, I have two options: an escape game or a day at an adventure park.\nNina: Will the budget cover the adventure park?\nLaura: Yes, with 20 people, it stays within our budget.\nJulien: Okay, adventure park it is. What activities exactly?\nPierre: Zipline, ropes course, and a small team-building challenge.\nNina: Perfect, I’ll prepare the booking and the quote.\nLaura: I’ll handle informing the teams and managing transportation.\nJulien: Great, I’ll put everything in the calendar and send a confirmation email. Thanks everyone!"
+    "title": "Marketing Campaign Post-Mortem",
+    "date": "2025-11-21",
+    "duration": "37 minutes",
+    "industry": "Marketing / E-commerce",
+    "participants": [
+      "Lara (Marketing Director)",
+      "Josh (Performance Manager)",
+      "Emily (Copywriter)",
+      "Robert (Brand Strategist)",
+      "Hannah (Data Scientist)"
+    ],
+    "transcript": "Lara: Alright team, thanks for joining the post-mortem for our Fall Conversion Campaign. We’ll look at what worked, what didn’t, and what we improve for the Winter push.\n\nJosh: I can kick off with the performance summary. So… overall ROAS was 3.1, slightly below our 3.3 target. CPC went up by 14% across Meta.\n\nHannah: And to add to that, the audience overlap increased significantly. We basically competed with ourselves.\n\nLara: Right. That’s something we really need to address next time.\n\nEmily: Can I jump in? I also noticed people responded differently to the urgency messaging. “Ending soon” performed great but “Only today” actually underperformed.\n\nRobert: Yeah, because it sounded too pushy. The brand perception data shows a dip in trust during those ads.\n\nJosh: Also worth noting: TikTok ads unexpectedly drove *high intent* users. Lower volume, but strong conversion quality.\n\nLara: Interesting. Maybe we should allocate more budget there for Winter.\n\nHannah: Definitely. And we should also restructure the lookalike audiences. The current 1% and 2% are saturated.\n\nEmily: For creatives, do we have insights on which formats worked best?\n\nJosh: Yes — video outperformed static by 40%. And the voice-over style did especially well.\n\nRobert: The storytelling angle felt more authentic.\n\nLara: Okay, so creative direction for Winter: more narration, more human tone.\n\nEmily: I’d also love to test long-form copy next time. People seem to read more than we expected.\n\nJosh: Speaking of reading… landing page scroll depth shows drop-off right before the testimonials.\n\nLara: So maybe we need to move them up.\n\nHannah: Or A/B test a shorter variant.\n\nLara: Good idea. Let’s add it as an action item.\n\nRobert: Can we also rework the brand consistency guidelines? The sudden pushy messages last month felt off-brand.\n\nLara: Yes. I suggest we create a “performance messaging sandbox” — copy variations that stay in line with brand guidelines but still allow experimentation.\n\nEmily: Love that.\n\nJosh: Same.\n\nLara: Perfect. Summary for Winter campaign:\n\n— Shift 15–20% of budget to TikTok.\n— Rework lookalike audiences and reduce overlap.\n— Move testimonials higher on landing pages.\n— Expand video creatives and voice-over concepts.\n— Build a brand-consistent messaging sandbox.\n\nEveryone aligned?\n\nAll: Yes.\n\nLara: Great, thanks team. I’ll publish the full post-mortem doc this afternoon."
   },
   {
     "id": "meeting-003",
-    "title": "Digital Marketing Campaign Follow-Up",
-    "date": "2025-11-25",
-    "duration": "10 minutes",
-    "industry": "Marketing / Advertising",
-    "participants": ["Alice (Marketing)", "Thomas (Data Analyst)", "Emilie (Content)", "Karim (Project Manager)"],
-    "transcript": "Karim: Hi everyone, today we’re reviewing the Facebook ad campaign.\nAlice: Early feedback is good, click-through rate is 2.5%, slightly above our target.\nThomas: Confirmed, and most leads are in the 25-34 age range.\nEmilie: Great. I’ll adjust the content to better target this audience.\nKarim: Excellent. Alice, can you monitor the budget for the next weeks?\nAlice: Sure, no problem. We still have 40% of the budget left to boost posts.\nKarim: Perfect. We’ll meet next week for the final results. Thanks!"
+    "title": "Engineering Architecture Deep Dive",
+    "date": "2025-11-26",
+    "duration": "45 minutes",
+    "industry": "Cloud Infrastructure / DevOps",
+    "participants": [
+      "Nathan (CTO)",
+      "Sam (Principal Engineer)",
+      "Jules (Senior Backend Engineer)",
+      "Priya (SRE)",
+      "Oliver (Security Engineer)"
+    ],
+    "transcript": "Nathan: Alright, thanks for being here everyone. Today we're doing an in-depth review of the new event-driven architecture proposal.\n\nSam: Yeah, so I can walk you through the high-level flow first. Basically, we move away from tightly coupled API calls and shift to a Kafka-based event pipeline.\n\nPriya: Which should help us reduce load surges during peak hours.\n\nJules: Absolutely. Right now, synchronous requests between services are killing latency.\n\nOliver: I’m mostly curious about the security implications.\n\nSam: Good point — we’ll get to that. First, let’s talk about ingestion. The gateway publishes events instead of calling services directly.\n\nNathan: What about ordering? Some flows need strict sequencing.\n\nSam: That’s the tricky part. We’ll use partition keys for user-level events. But… business-level ordering is more complex.\n\nPriya: Yeah, and we need to benchmark throughput. Kafka’s fine, but our current infra may need scaling.\n\nOliver: From a security perspective, event poisoning is a risk. We must sign events.\n\nNathan: Agreed. Jules, can you handle a POC for event signatures?\n\nJules: Yeah, I can do that.\n\nPriya: Also, we need observability. Distributed tracing in event-driven systems is notoriously painful.\n\nSam: True. We’ll integrate OpenTelemetry. But… we need consistency across services.\n\nNathan: Okay, let’s assign a working group for tracing.\n\nPriya: I’m in.\n\nOliver: Same for me, security needs visibility.\n\nNathan: Perfect. Now, about the migration. We can’t do a big bang.\n\nSam: Yes, we’ll start with one service — the billing pipeline is the best candidate.\n\nJules: Fully agree. It’s isolated and has clear event boundaries.\n\nOliver: And fewer privilege concerns.\n\nNathan: So milestone plan:\n\n— Week 1–2: Billing service POC.\n— Week 3–5: Integrate event signing + tracing.\n— Week 6: Load tests.\n\nPriya: And we need rollback plans for each phase.\n\nSam: Already drafting them.\n\nNathan: Great. Final question: do we need more hiring for this migration?\n\nPriya: Another SRE would help.\n\nOliver: And maybe a dedicated security engineer for the event pipeline.\n\nNathan: Noted. I’ll talk to HR.\n\nAlright, thanks everyone — solid session."
   },
   {
     "id": "meeting-004",
-    "title": "Product Backlog Review",
-    "date": "2025-11-27",
-    "duration": "14 minutes",
-    "industry": "Tech / Web Development",
-    "participants": ["Marc (Scrum Master)", "Léa (Product Owner)", "Romain (Developer)", "Camille (DevOps)"],
-    "transcript": "Marc: Hello everyone, let’s start the backlog review for the next sprint.\nLéa: Priorities are clear: improve site search, fix critical bugs, and add an advanced filter option.\nRomain: Improved search is doable, but the advanced filter will take a bit more time on the backend.\nCamille: I can help with deployment and prepare test environments.\nMarc: Great. How long for the advanced filter?\nRomain: About 4 days, so we might need to postpone a lower-priority task.\nLéa: Okay, we can delay the “custom icon addition” to the next sprint.\nMarc: Perfect, I’ll update the backlog and send the summary. Thanks!"
+    "title": "UX Research Debrief + Feature Prioritization",
+    "date": "2025-11-28",
+    "duration": "33 minutes",
+    "industry": "EdTech",
+    "participants": [
+      "Sophia (UX Lead)",
+      "Mark (Product Manager)",
+      "Elena (Frontend Developer)",
+      "Tim (Data Analyst)",
+      "Grace (User Researcher)"
+    ],
+    "transcript": "Sophia: Thanks for joining, everyone. Grace is going to present the results from the last round of user interviews.\n\nGrace: Yes, so… we interviewed 18 teachers and 7 school administrators. The big themes were clarity, cognitive load, and confusion around grading workflows.\n\nMark: Yeah, grading keeps coming back as a pain point.\n\nGrace: Absolutely. Teachers spend too much time navigating between rubrics and submissions.\n\nElena: That matches the telemetry. The tab-switching rate is insanely high.\n\nTim: I have data supporting that. Users switch tabs an average of 23 times per assignment.\n\nSophia: Wow, that’s a lot.\n\nGrace: And administrators find the dashboard overwhelming. Too many metrics at once.\n\nMark: So for prioritization, grading workflow seems like P1.\n\nSophia: Agreed. And dashboard simplification as P2.\n\nElena: What kind of changes are we thinking for grading?\n\nGrace: A single-page flow. Teachers said they want to “stay with the student’s work,” not jump around.\n\nTim: And we can surface the rubric contextually.\n\nElena: That’s doable.\n\nMark: What about admin dashboards?\n\nSophia: We can collapse rarely used sections and move advanced metrics to an expandable panel.\n\nTim: Data-wise, only 12% of admins use those deeper metrics anyway.\n\nGrace: Exactly.\n\nSophia: Okay, so action plan:\n\n— Redesign grading workflow (single-view flow).\n— Simplify admin dashboard.\n— Optional stretch: restructure metrics.\n\nElena: I’ll need design specs early.\n\nSophia: I’ll have mockups by next Wednesday.\n\nMark: Perfect. We’ll build the feature brief afterward.\n\nGrace: And I’ll schedule follow-up interviews with 10 teachers once prototypes are ready.\n\nSophia: Great work everyone — that’s all for today."
   }
 ]
