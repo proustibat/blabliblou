@@ -10,7 +10,8 @@ export const RecordingDetailsPage = () => {
   const { data: recording, isLoading: isRecordingLoading } = useRecording(id!);
 
   // Hook AI : enabled = false pour ne pas lancer automatiquement
-  const { data: aiSummary, isFetching: isAnalyzing, refetch, isLoading:iseLoadingSummary } = useAI(recording);
+  const { data: aiSummaryDetailed, isFetching: isFetchingDetailed, refetch: refetchDetailed, isLoading: isLoadingSummaryDetailed } = useAI(recording, true);
+  const { data: aiSummarySimple, isFetching: isFetchingSimple, refetch: refetchSimple, isLoading: isLoadingSummarySimple } = useAI(recording, false);
 
   if (isRecordingLoading) return <Spinner />;
   if (!recording) return <div>Recording not found</div>;
@@ -64,32 +65,62 @@ export const RecordingDetailsPage = () => {
       </div>
 
 
-      {!aiSummary &&  <Button onClick={() => refetch()} disabled={isAnalyzing}>
-        {isAnalyzing||iseLoadingSummary ? <Spinner/> : "Summarize with AI"}
-      </Button>}
+      <div className="flex gap-2">
+        {<Button onClick={() => refetchSimple()} disabled={isFetchingSimple || !!aiSummarySimple}>
+          {isFetchingSimple || isLoadingSummarySimple ? <Spinner/> : "Summarize with AI (simple version)"}
+        </Button>}
+
+        {<Button onClick={() => refetchDetailed()} disabled={isFetchingDetailed || !!aiSummaryDetailed}>
+          {isFetchingDetailed || isLoadingSummaryDetailed ? <Spinner/> : "Summarize with AI (detailed version)"}
+        </Button>}
+      </div>
 
 
-      {aiSummary && (
+
+      {aiSummarySimple && (
         <Card className="mt-4 p-4 bg-yellow-50">
-          <h2 className="font-bold text-xl mb-3">AI Summary</h2>
+          <h2 className="font-bold text-xl mb-3">AI Summary Simple</h2>
           <div className="prose prose-sm max-w-none">
             <ReactMarkdown
               components={{
-                h3: ({ children }) => (
+                h3: ({children}) => (
                   <h3 className="text-lg font-bold mt-4 mb-2 text-indigo-700">
                     {children}
                   </h3>
                 ),
-                li: ({ children }) => (
+                li: ({children}) => (
                   <li className="ml-6 list-disc text-gray-800">{children}</li>
                 ),
               }}
             >
-              {aiSummary}
+              {aiSummarySimple}
             </ReactMarkdown>
           </div>
         </Card>
       )}
+
+      {aiSummaryDetailed && (
+        <Card className="mt-4 p-4 bg-yellow-50">
+          <h2 className="font-bold text-xl mb-3">AI Summary Detailed</h2>
+          <div className="prose prose-sm max-w-none">
+            <ReactMarkdown
+              components={{
+                h3: ({children}) => (
+                  <h3 className="text-lg font-bold mt-4 mb-2 text-indigo-700">
+                    {children}
+                  </h3>
+                ),
+                li: ({children}) => (
+                  <li className="ml-6 list-disc text-gray-800">{children}</li>
+                ),
+              }}
+            >
+              {aiSummaryDetailed}
+            </ReactMarkdown>
+          </div>
+        </Card>
+      )}
+
 
       <Card className="p-4 bg-gray-100">
         <h2 className="font-bold mb-2">Transcript</h2>
