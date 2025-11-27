@@ -1,0 +1,38 @@
+[
+  {
+    "id": "meeting-001",
+    "title": "Launch of Dark Mode Feature",
+    "date": "2025-11-20",
+    "duration": "12 minutes",
+    "industry": "Tech / Mobile App",
+    "participants": ["Clara (Product Manager)", "Malik (Frontend Developer)", "Sophie (UX Designer)", "Hugo (QA)"],
+    "transcript": "Clara: Hi everyone, thanks for joining. Today we’re discussing the launch of the dark mode feature on our mobile app.\nMalik: Hey, on the dev side, iOS is done and Android is almost ready. There’s just a small bug with the switch animation.\nSophie: For UX, I’ve checked the dark mode designs and it looks good, but we need to adjust contrast on some buttons for accessibility.\nHugo: Got it. I can start testing on iOS once Malik fixes the bug, then Android.\nClara: Perfect. Malik, can you fix it by tomorrow?\nMalik: Yes, I can. I’ll prioritize it today.\nClara: Great. Sophie, can you update the designs and share them with QA?\nSophie: Yes, I’ll do that this morning.\nClara: Excellent. Action plan: bug fixed by Malik, QA tests by Hugo, designs shared by Sophie. We’ll meet on Friday for the final review. Thanks!"
+  },
+  {
+    "id": "meeting-002",
+    "title": "End-of-Year Team-Building Organization",
+    "date": "2025-11-22",
+    "duration": "15 minutes",
+    "industry": "HR / Management",
+    "participants": ["Julien (Manager)", "Laura (HR)", "Pierre (Marketing)", "Nina (Finance)"],
+    "transcript": "Julien: Hello, today we need to plan the end-of-year team-building. We need to decide on location, date, and activities.\nLaura: I suggest the week of December 15, that gives everyone enough time to organize.\nPierre: For the location, I have two options: an escape game or a day at an adventure park.\nNina: Will the budget cover the adventure park?\nLaura: Yes, with 20 people, it stays within our budget.\nJulien: Okay, adventure park it is. What activities exactly?\nPierre: Zipline, ropes course, and a small team-building challenge.\nNina: Perfect, I’ll prepare the booking and the quote.\nLaura: I’ll handle informing the teams and managing transportation.\nJulien: Great, I’ll put everything in the calendar and send a confirmation email. Thanks everyone!"
+  },
+  {
+    "id": "meeting-003",
+    "title": "Digital Marketing Campaign Follow-Up",
+    "date": "2025-11-25",
+    "duration": "10 minutes",
+    "industry": "Marketing / Advertising",
+    "participants": ["Alice (Marketing)", "Thomas (Data Analyst)", "Emilie (Content)", "Karim (Project Manager)"],
+    "transcript": "Karim: Hi everyone, today we’re reviewing the Facebook ad campaign.\nAlice: Early feedback is good, click-through rate is 2.5%, slightly above our target.\nThomas: Confirmed, and most leads are in the 25-34 age range.\nEmilie: Great. I’ll adjust the content to better target this audience.\nKarim: Excellent. Alice, can you monitor the budget for the next weeks?\nAlice: Sure, no problem. We still have 40% of the budget left to boost posts.\nKarim: Perfect. We’ll meet next week for the final results. Thanks!"
+  },
+  {
+    "id": "meeting-004",
+    "title": "Product Backlog Review",
+    "date": "2025-11-27",
+    "duration": "14 minutes",
+    "industry": "Tech / Web Development",
+    "participants": ["Marc (Scrum Master)", "Léa (Product Owner)", "Romain (Developer)", "Camille (DevOps)"],
+    "transcript": "Marc: Hello everyone, let’s start the backlog review for the next sprint.\nLéa: Priorities are clear: improve site search, fix critical bugs, and add an advanced filter option.\nRomain: Improved search is doable, but the advanced filter will take a bit more time on the backend.\nCamille: I can help with deployment and prepare test environments.\nMarc: Great. How long for the advanced filter?\nRomain: About 4 days, so we might need to postpone a lower-priority task.\nLéa: Okay, we can delay the “custom icon addition” to the next sprint.\nMarc: Perfect, I’ll update the backlog and send the summary. Thanks!"
+  }
+]
