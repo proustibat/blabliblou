@@ -1,11 +1,15 @@
 import { Button, Card, Spinner } from "components/ui";
 import { Link, useParams } from "react-router-dom";
+import {ChevronDownIcon} from "@heroicons/react/16/solid";
 import ReactMarkdown from "react-markdown";
 import { useAI } from "features/ai/useAI";
 import { useRecording } from "features/recordings/useRecording";
+import {useState} from "react";
 
 
 export const RecordingDetailsPage = () => {
+  const [isSimpleContentOpen, setIsSimpleContentOpen] = useState(true);
+  const [isDetailedContentOpen, setIsDetailedContentOpen] = useState(true);
   const { id } = useParams<{ id: string }>();
   const { data: recording, isLoading: isRecordingLoading } = useRecording(id!);
 
@@ -16,8 +20,18 @@ export const RecordingDetailsPage = () => {
   if (isRecordingLoading) return <Spinner />;
   if (!recording) return <div>Recording not found</div>;
 
+
+  const toggleSimpleContent = () => {
+    setIsSimpleContentOpen(!isSimpleContentOpen);
+  };
+
+  const toggleDetailedContent = () => {
+    setIsDetailedContentOpen(!isDetailedContentOpen);
+  };
+
   return (
     <div className="p-8 space-y-4">
+        
       <Link to="/" className="text-blue-500 hover:underline">
         ← Back to recordings
       </Link>
@@ -66,12 +80,12 @@ export const RecordingDetailsPage = () => {
 
 
       <div className="flex gap-2">
-        {<Button onClick={() => refetchSimple()} disabled={isFetchingSimple || !!aiSummarySimple}>
-          {isFetchingSimple || isLoadingSummarySimple ? <Spinner/> : "Summarize with AI (simple version)"}
+        {<Button variant={(isLoadingSummarySimple || isFetchingSimple) ? "ghost": "primary"} onClick={() => refetchSimple()} disabled={!!aiSummarySimple}>
+          {(isFetchingSimple || isLoadingSummarySimple) && <Spinner/>}<span>Summarize with AI (simple version)</span>
         </Button>}
 
-        {<Button onClick={() => refetchDetailed()} disabled={isFetchingDetailed || !!aiSummaryDetailed}>
-          {isFetchingDetailed || isLoadingSummaryDetailed ? <Spinner/> : "Summarize with AI (detailed version)"}
+        {<Button variant={(isLoadingSummaryDetailed || isFetchingDetailed) ? "ghost": "primary"} onClick={() => refetchDetailed()} disabled={!!aiSummaryDetailed}>
+          {(isFetchingDetailed || isLoadingSummaryDetailed) && <Spinner/>}<span>Summarize with AI (detailed version)</span>
         </Button>}
       </div>
 
@@ -79,45 +93,57 @@ export const RecordingDetailsPage = () => {
 
       {aiSummarySimple && (
         <Card className="mt-4 p-4 bg-yellow-50">
-          <h2 className="font-bold text-xl mb-3">AI Summary Simple</h2>
-          <div className="prose prose-sm max-w-none">
-            <ReactMarkdown
-              components={{
-                h3: ({children}) => (
-                  <h3 className="text-lg font-bold mt-4 mb-2 text-indigo-700">
-                    {children}
-                  </h3>
-                ),
-                li: ({children}) => (
-                  <li className="ml-6 list-disc text-gray-800">{children}</li>
-                ),
-              }}
-            >
-              {aiSummarySimple}
-            </ReactMarkdown>
-          </div>
+          <div className={`flex gap-3 items-center font-bold uppercase w-full ${!isSimpleContentOpen && "mb-2"}`}>
+            <h2>AI Summary Simple</h2>
+            <Button variant="secondary" className="outline-0 !p-0 !m-0 w-8 h-8" onClick={toggleSimpleContent}><ChevronDownIcon className={`h-8 w-8 hover:bg-none m-0 p-0 ${isSimpleContentOpen && "transform rotate-180"}`}/></Button></div>
+          {isSimpleContentOpen && (
+            <div className="prose prose-sm max-w-none">
+              <ReactMarkdown
+                components={{
+                  h3: ({children}) => (
+                    <h3 className="text-lg font-bold mt-4 mb-2 text-indigo-700">
+                      {children}
+                    </h3>
+                  ),
+                  li: ({children}) => (
+                    <li className="ml-6 list-disc text-gray-800">{children}</li>
+                  ),
+                }}
+              >
+                {aiSummarySimple}
+              </ReactMarkdown>
+            </div>
+
+          )}
+
         </Card>
       )}
 
       {aiSummaryDetailed && (
         <Card className="mt-4 p-4 bg-yellow-50">
-          <h2 className="font-bold text-xl mb-3">AI Summary Detailed</h2>
-          <div className="prose prose-sm max-w-none">
-            <ReactMarkdown
-              components={{
-                h3: ({children}) => (
-                  <h3 className="text-lg font-bold mt-4 mb-2 text-indigo-700">
-                    {children}
-                  </h3>
-                ),
-                li: ({children}) => (
-                  <li className="ml-6 list-disc text-gray-800">{children}</li>
-                ),
-              }}
-            >
-              {aiSummaryDetailed}
-            </ReactMarkdown>
-          </div>
+          <div className={`flex gap-3 items-center font-bold uppercase w-full ${!isDetailedContentOpen && "mb-2"}`}>
+            <h2>AI Summary Detailed</h2>
+            <Button variant="secondary" className="outline-0 !p-0 !m-0 w-8 h-8" onClick={toggleDetailedContent}><ChevronDownIcon className={`h-8 w-8 hover:bg-none m-0 p-0 ${isDetailedContentOpen && "transform rotate-180"}`}/></Button></div>
+          {isDetailedContentOpen && (
+            <div className="prose prose-sm max-w-none">
+              <ReactMarkdown
+                components={{
+                  h3: ({children}) => (
+                    <h3 className="text-lg font-bold mt-4 mb-2 text-indigo-700">
+                      {children}
+                    </h3>
+                  ),
+                  li: ({children}) => (
+                    <li className="ml-6 list-disc text-gray-800">{children}</li>
+                  ),
+                }}
+              >
+                {aiSummaryDetailed}
+              </ReactMarkdown>
+            </div>
+
+          )}
+
         </Card>
       )}
 
