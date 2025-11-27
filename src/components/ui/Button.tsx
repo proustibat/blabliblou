@@ -4,11 +4,11 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const VARIANT_CLASSES: Record<NonNullable<ButtonProps['variant']>, string> = {
     primary:
-        'bg-slate-900 text-slate-50 hover:bg-slate-800 disabled:bg-slate-300 disabled:text-slate-500',
+        'bg-slate-900 text-slate-50 hover:bg-slate-800 ',
     secondary:
-        'border border-slate-300 text-slate-800 bg-white hover:bg-slate-50 disabled:border-slate-200 disabled:text-slate-400',
+        'border border-slate-300 text-slate-800 bg-white hover:bg-slate-50 ',
     ghost:
-        'bg-transparent text-slate-600 hover:bg-slate-100 disabled:text-slate-400',
+        'bg-transparent text-slate-600 hover:bg-slate-100 ',
 };
 
 export const Button = ({ variant = 'primary', className = '', ...props }: ButtonProps) => {
