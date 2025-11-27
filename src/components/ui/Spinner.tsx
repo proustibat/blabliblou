@@ -6,9 +6,13 @@ type SpinnerProps = {
 export const Spinner = ({ size = 24, className = '' }: SpinnerProps) => {
     return (
         <div
-            className={`animate-spin border-4 border-blue-500 border-t-transparent rounded-full ${className}`}
+            className={`
+                inline-block animate-spin
+                border-4 border-slate-300 border-t-transparent
+                rounded-full
+                ${className}
+            `}
             style={{ width: size, height: size }}
         />
     );
 };
-

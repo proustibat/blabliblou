@@ -4,8 +4,20 @@ type CardProps = React.HTMLAttributes<HTMLDivElement> & {
 
 export const Card = ({ title, children, className = '', ...props }: CardProps) => {
     return (
-        <div className={`bg-white dark:bg-gray-800 shadow-md rounded p-4 ${className}`} {...props}>
-            {title && <h3 className="text-lg font-semibold mb-2">{title}</h3>}
+        <div
+            className={`
+                rounded-xl border border-slate-200 bg-white
+                shadow-sm
+                p-4 sm:p-5
+                ${className}
+            `}
+            {...props}
+        >
+            {title && (
+                <h3 className="text-sm font-semibold text-slate-900 mb-3 tracking-tight">
+                    {title}
+                </h3>
+            )}
             {children}
         </div>
     );

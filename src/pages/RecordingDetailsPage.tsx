@@ -19,11 +19,53 @@ export const RecordingDetailsPage = () => {
                 ← Back to recordings
             </Link>
 
-            <h1 className="text-2xl font-bold">{recording.title}</h1>
-            <p>Date: {new Date(recording.date).toLocaleString()}</p>
-            <p>Duration: {recording.duration}</p>
-            <p>Industry: {recording.industry}</p>
-            <p>Participants: {recording.participants.join(", ")}</p>
+            <h1 className="text-2xl font-semibold tracking-tight">
+                {recording.title}
+            </h1>
+            <span className="inline-block bg-slate-900 text-slate-50 text-xs px-3 py-1 rounded-full font-medium">
+    {recording.industry}
+</span>
+
+            <div className="space-y-3 text-sm mt-4">
+
+                {/* Date */}
+                <div>
+                    <p className="text-xs uppercase font-medium text-slate-400 tracking-wider">
+                        Date
+                    </p>
+                    <p className="text-slate-800">
+                        {new Date(recording.date).toLocaleString()}
+                    </p>
+                </div>
+
+                {/* Duration */}
+                <div>
+                    <p className="text-xs uppercase font-medium text-slate-400 tracking-wider">
+                        Duration
+                    </p>
+                    <span className="inline-block bg-slate-200 text-slate-700 text-xs px-3 py-1 rounded-full">
+            {recording.duration}
+        </span>
+                </div>
+
+                {/* Industry */}
+                <div>
+                    <p className="text-xs uppercase font-medium text-slate-400 tracking-wider">
+                        Industry
+                    </p>
+                    <p className="text-slate-800">{recording.industry}</p>
+                </div>
+
+                {/* Participants */}
+                <div>
+                    <p className="text-xs uppercase font-medium text-slate-400 tracking-wider">
+                        Participants
+                    </p>
+                    <p className="text-slate-800 leading-relaxed">
+                        {recording.participants.join(", ")}
+                    </p>
+                </div>
+            </div>
 
             <Card className="p-4 bg-gray-100">
                 <h2 className="font-bold mb-2">Transcript</h2>
@@ -31,7 +73,7 @@ export const RecordingDetailsPage = () => {
             </Card>
 
             <Button onClick={() => refetch()} disabled={isAnalyzing}>
-                {isAnalyzing ? <Spinner /> : "Summarize with AI"}
+                {isAnalyzing ? <Spinner/> : "Summarize with AI"}
             </Button>
 
             {aiSummary && (
